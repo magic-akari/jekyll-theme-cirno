@@ -1,0 +1,23 @@
+.header {
+  border-top: 2px solid gray;
+  border-bottom: 1px solid gray;
+  background: #24292e;
+
+  & > .header-title {
+    font-size: 2rem;
+  }
+
+  a,
+  a:visited {
+    color: #ffffffbf;
+    transition: 0.5s color ease;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}

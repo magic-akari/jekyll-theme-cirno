@@ -1,0 +1,36 @@
+title: Jekyll Theme Cirno
+author: 阿卡琳
+email: hufan.akarin@Gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+ a light theme for jekyll
+
+# social links
+github_username: hufan-akari
+rss: rss
+
+# Build settings
+sass:
+  style: compressed
+  
+markdown: kramdown
+theme: jekyll-theme-cirno
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+permalink: pretty
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-feed
+
+paginate: 5
+
+cirno:
+  header_pages:
+    - archives.md
+    - feed.xml
+
+remote_theme: hufan-akari/jekyll-theme-cirno

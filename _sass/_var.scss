@@ -1,0 +1,22 @@
+$theme-color: #2196f3 !default;
+
+$font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+  "Hiragino Sans GB", "Heiti SC", "Source Han Sans SC", "Noto Sans CJK SC",
+  "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif !default;
+
+$pad-width: 1024px !default;
+$phone-width: 768px !default;
+
+$space-unit: 30px !default;
+
+%magic-padding {
+  padding: 0 calc(50% - #{$pad-width} / 2);
+
+  @media screen and (max-width: $pad-width) {
+    padding: 0 $space-unit / 2;
+  }
+
+  @media screen and (max-width: $phone-width) {
+    padding: 0 $space-unit / 4;
+  }
+}
