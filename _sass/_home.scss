@@ -1,6 +1,8 @@
 .post-list {
   @extend %magic-padding;
 
+  list-style: none;
+
   .post-card {
     margin: 2rem auto;
 
