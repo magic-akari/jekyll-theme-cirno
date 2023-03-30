@@ -1,0 +1,65 @@
+.post-list {
+  @extend %magic-padding;
+
+  list-style: none;
+
+  .post-card {
+    margin: 2rem auto;
+
+    &:hover img {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  .post-link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-image {
+    max-height: 15rem;
+    width: 100%;
+    overflow: hidden;
+    & > img {
+      max-height: 15rem;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+  }
+
+  .post-title {
+    font-size: 1.2rem;
+  }
+
+  .post-meta {
+    font-size: 0.8rem;
+    color: gray;
+  }
+}
+
+.pagination {
+  @extend %magic-padding;
+
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 62px;
+  align-items: center;
+
+  .next,
+  .previous {
+    & > svg {
+      fill: $theme-color;
+      height: 48px;
+      width: 48px;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}

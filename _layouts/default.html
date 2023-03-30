@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+{%- include head.html -%}
+<body class="{{ page.layout | default: 'default' }}">
+<main class="{{ page.layout | default: 'default' }}">
+{%- assign hide_header = post.hide_header | default: layout.hide_header | default: site.cirno.hide_header -%}
+{%- unless hide_header-%}
+{%- include header.html -%}
+{%- endunless -%}
+{{ content }}
+{%- assign hide_footer = post.hide_footer | default: layout.hide_footer | default: site.cirno.hide_footer -%}
+{%- unless hide_footer -%}
+{%- include footer.html -%}
+{%- endunless -%}
+</main>
+{% include extra_script.html %}
+</body>
+</html>

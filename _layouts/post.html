@@ -1,0 +1,32 @@
+--- 
+layout: default
+--- 
+{%- if page.cover -%}
+<section class="post-cover">
+    <img src="{{ page.cover }}" alt="cover of {{ page.title | escape }}" />
+</section>
+{%- endif -%}
+<article class="stretch flex">
+    <header class="post-header">
+        <h1 class="headline">{{ page.title | escape }}</h1>
+        {%- assign tags_length = page.tags | size -%}
+        {%- if tags_length > 0 -%}
+        <div class="tags">
+            {%- for tag in page.tags -%}
+            <span class="tag">{{ tag | escape }}</span>
+            {%- endfor -%}
+        </div>
+        {%- endif -%}
+        <section class="post-meta">
+            <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date_to_long_string }}
+            </time>
+            <span>•</span>
+            <span>{{ page.author | default: site.author }}</span>
+        </section>
+    </header>
+    <div class="content stretch">
+        {{ content }}
+    </div>
+    {%- include post_footer.html -%}
+</article>

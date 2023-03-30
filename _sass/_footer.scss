@@ -1,0 +1,17 @@
+.footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: gray;
+
+  & > section {
+    text-align: center;
+
+    & > span:not(:last-child) {
+      margin-right: 0.5rem;
+      &::after {
+        padding-left: 0.5rem;
+        content: "|";
+      }
+    }
+  }
+}

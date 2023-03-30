@@ -1,0 +1,18 @@
+html,
+body,
+main {
+  height: 100%;
+}
+
+main {
+  @extend .flex;
+}
+
+.header {
+  flex: 0 0 auto;
+  @extend %magic-padding;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

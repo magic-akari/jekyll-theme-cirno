@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<ul class="post-list stretch">
+{%- assign posts = paginator.posts | default: site.posts -%}
+{%- for post in posts -%}
+<li class="post-card">
+    <section class="post-title">
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+    </section>
+    <section class="post-meta">
+        <time>{{ post.date | date_to_long_string }}</time>
+    </section>
+    <section class="post-excerpt">
+        <p>{{ post.excerpt | strip_html }}</p>
+    </section>
+</li>
+{%- endfor -%}
+</ul>
+{%- if paginator.total_pages > 1 -%}
+<footer class="pagination">
+    <a href="{{ paginator.previous_page_path }}" class="previous" {% unless paginator.previous_page %}disabled{% endunless %}>
+        <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </a>
+    <span class="page_number ">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+    <a href="{{ paginator.next_page_path }}" class="next" {% unless paginator.next_page %}disabled{% endunless %}>
+        <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </a>
+</footer>
+{%- endif -%}
